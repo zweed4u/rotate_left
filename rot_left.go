@@ -18,6 +18,10 @@ func rotateLeft(arr []int, rotations int) []int {
 	rotations %= lengthOfArray
 
 	for index := range arr {
+		// look ahead in the array to the index whose value will 
+		// be rotated to current index and wrap around len array 
+		// (module) ensuring we don't go out of bounds by adding
+		// the rotations to the index 
 		rotatedIndex := (index + rotations) % lengthOfArray
 		rotatedArray[index] = arr[rotatedIndex]
 	}
